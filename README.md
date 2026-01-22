@@ -74,8 +74,13 @@
 
 1.  **安装Docker Container**：
     ```bash
+    # 通过 Ubuntu apt 安装
     sudo apt update
     sudo apt install docker.io
+
+    # 通过 Docker 官方一键安装脚本安装
+    curl -fsSL https://get.docker.com -o get-docker.sh
+    sudo sh get-docker.sh
     ```
 
 2.  **将当前用户加入 `docker` 组**，避免每次使用 `sudo`：
@@ -90,6 +95,35 @@
     docker run hello-world
     ```
     看到欢迎信息即表示安装成功。
+
+### 安装 NVIDIA Container Toolkit（推荐）
+
+为了确保 Docker 容器能够直接使用宿主机的 NVIDIA GPU，需要安装 NVIDIA Container Toolkit。
+
+1.  **配置仓库并安装工具包**：
+    ```bash
+    # 添加仓库密钥和源
+    curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg \\
+      && curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \\
+      sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \\
+      sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
+
+    sudo apt-get update
+    sudo apt-get install -y nvidia-container-toolkit
+    ```
+
+2.  **配置 Docker 使用 NVIDIA 运行时并重启**：
+    ```bash
+    sudo nvidia-ctk runtime configure --runtime=docker
+    sudo systemctl restart docker
+    ```
+
+3.  **验证安装**：
+    运行一个测试容器，检查 `nvidia-smi` 能否在容器内正常工作：
+    ```bash
+    docker run --rm --gpus all nvidia/cuda:12.1.0-base-ubuntu22.04 nvidia-smi
+    ```
+    如果该命令成功输出与宿主机相似的 GPU 信息，则表明容器 GPU 支持已配置正确。
 
 ## 第三步：获取代码与场景资产
 <a id="第三步获取代码与场景资产"></a>
