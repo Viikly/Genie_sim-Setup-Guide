@@ -13,7 +13,8 @@
 
 **对于新用户，尤其是使用 RTX 50 系列显卡的用户，请优先查阅官方最新文档：**
 - **v3.0 指南**：https://agibot-world.com/sim-evaluation/docs/#/v3
-- **GitHub 仓库**：https://github.com/AgibotTech/genie_sim
+- **GitHub 3.0 仓库**：https://github.com/AgibotTech/genie_sim
+- **GitHub 2.3 仓库**：https://github.com/AgibotTech/genie_sim/tree/v2.3
 
 本 v2.0 教程仍可作为环境配置、问题排查思路的参考。
 
@@ -268,4 +269,4 @@ Genie Sim 采用 **客户端-服务器架构**，需要两个终端协作。
 *   本教程所描述和引用的核心仿真框架 **[Genie Sim Benchmark](https://github.com/AgibotTech/genie_sim)**，其源代码与数据遵循其自身的开源许可证：
     *   `source/geniesim` 与 `source/data_collection` 目录下的内容基于 **Mozilla Public License 2.0 (MPL-2.0)**。
     *   `source/scene_reconstruction` 等项目包含多重许可证，具体细节请参阅其项目内的 LICENSE 文件。
-*   本教程为基于 Genie Sim v2.0 的实践记录，与官方无隶属关系。官方版本如有更新，请以其 [用户指南](https://agibot-world.com/sim-evaluation/docs/#/v2) 和 [GitHub仓库](https://github.com/AgibotTech/genie_sim) 为准。
+*   本教程为基于 Genie Sim v2.0 的实践记录，与官方无隶属关系。官方版本如有更新，请以其 [用户指南](https://agibot-world.com/sim-evaluation/docs/#/v2) 和 [GitHub仓库](https://github.com/AgibotTech/genie_sim/tree/v2.3) 为准。
