@@ -69,7 +69,7 @@
 
 ## 第二步：安装与配置Docker
 
-1.  **安装Docker Engine**：
+1.  **安装Docker Container**：
     ```bash
     sudo apt update
     sudo apt install docker.io
@@ -103,7 +103,7 @@
 
 ## 第四步：构建Docker镜像
 
-1.  在项目根目录执行构建命令。**此过程耗时较长（约1-2小时），需保持网络稳定**。
+1.  在项目根目录执行构建命令。**此过程耗时较长（约0.5-2小时），需保持网络稳定**。
     ```bash
     docker build -f ./scripts/dockerfile -t registry.agibot.com/genie-sim/open_source:latest .
     ```
@@ -224,4 +224,4 @@ Genie Sim 采用 **客户端-服务器架构**，需要两个终端协作。
 *   本教程所描述和引用的核心仿真框架 **[Genie Sim Benchmark](https://github.com/AgibotTech/genie_sim)**，其源代码与数据遵循其自身的开源许可证：
     *   `source/geniesim` 与 `source/data_collection` 目录下的内容基于 **Mozilla Public License 2.0 (MPL-2.0)**。
     *   `source/scene_reconstruction` 等项目包含多重许可证，具体细节请参阅其项目内的 LICENSE 文件。
-*   本教程为基于 Genie Sim v2.0 的实践记录，与官方无隶属关系。官方版本如有更新，请以其 [用户指南](https://agibot-world.com/sim-evaluation/docs/) 和 [GitHub仓库](https://github.com/AgibotTech/genie_sim) 为准。
+*   本教程为基于 Genie Sim v2.0 的实践记录，与官方无隶属关系。官方版本如有更新，请以其 [用户指南](https://agibot-world.com/sim-evaluation/docs/#/v2) 和 [GitHub仓库](https://github.com/AgibotTech/genie_sim) 为准。
